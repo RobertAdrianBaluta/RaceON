@@ -6,39 +6,31 @@ using TMPro;
 
 public class FinishRace : MonoBehaviour
 {
+    //----------List of Cars, TMP and public variable for laps to completed -------//
     public GameObject FinishRaceMenu;
     [SerializeField]
-    LapCounter[] lapCounters; //= new LapCounter[3];
-
+    LapCounter[] lapCounters; 
     [SerializeField]
     TMP_Text winnerText;
-
     [SerializeField]
     const int lapsToComplete = 2;
 
-    private void Start()
-    {  
-    }
-
+    //-------------If the car form th------------//
     public void Update()
     {
-        for (int i = 0; i < lapCounters.Length; i++)
-        {
-            //lapCounters[i].gameObject.name
 
-            
+        //If any of the cars from the LapCounter list gets to lapsToComplete, the game will be over and the winner will be displayed
+        for (int i = 0; i < lapCounters.Length; i++)
+        { 
             if (lapCounters[i].LapsCompleted >= lapsToComplete)
             {
-
-                Debug.Log("winenr " + lapCounters[i].name);
-                //RaceComplete = true;
                 FinishRaceMenu.SetActive(true);              
                 winnerText.SetText(lapCounters[i].name + " IS THE WINNER!!!");
             }
         }
-
     }
 
+    //-------------------Button action for Next level-----------------//
     public void ContinueToNextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

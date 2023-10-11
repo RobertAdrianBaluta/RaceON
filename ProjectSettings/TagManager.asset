@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Checkpoint
+  - Speed
   layers:
   - Default
   - TransparentFX

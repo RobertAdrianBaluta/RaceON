@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class CarInput : MonoBehaviour
 {
     
+    //----------------------------Calls the CarController's script---------------------------//
     CarController carController;
 
     private void Start()
@@ -13,6 +14,7 @@ public class CarInput : MonoBehaviour
         carController = GetComponent<CarController>();
     }
 
+    //---------------------Inputs for the cars movement-----------------------//
     public void OnDrive(InputAction.CallbackContext context)
     {
         Vector2 inputFromKey = context.ReadValue<Vector2>();

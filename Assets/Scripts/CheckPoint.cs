@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class CheckPoint : MonoBehaviour
 {
+    //--------------Checkpoint---------------//
      public bool FinishLine = false; 
-     public int checkpointNumber = 1;
-
-  
+     public int checkpointNumber;
 }

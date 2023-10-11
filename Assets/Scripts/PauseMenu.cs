@@ -8,20 +8,7 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject pauseMenu;
 
-    public void BackToMenu()
-    {
-        SceneManager.LoadScene(0);
-        pauseMenu.SetActive(false);
-        Time.timeScale = 1f;
-    }
-
-    public void Restart()
-    {
-        SceneManager.LoadScene(1);
-        pauseMenu.SetActive(false);
-        Time.timeScale = 1f;
-    }
-
+    //-------Input key for pause menu---------////
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -35,6 +22,22 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         } 
+    }
+
+    //--------------Behaviours for buttons-----------------//
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    public void Restart()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     public void Resume()
